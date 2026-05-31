@@ -17,7 +17,7 @@ This document describes how to provision the environment, validate the healthy s
 
 ### IAM Setup
 
-3. Create the IAM policy granting access to the S3 object.
+3. Create an IAM policy using [healthy-policy.sh](./policies/healthy-policy.json)
 4. Create the IAM role for EC2.
 5. Attach the policy to the role.
 
