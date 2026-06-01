@@ -31,16 +31,16 @@ This document describes how to provision the environment, validate the healthy s
 
 ### Baseline Validation
 
-11. Access http://<public-ip>
+11. Access http://(instance-public-ip)
 12. Confirm that the application displays the S3 content
 
 ## Failure Injection
 
-Run: scripts/chaos/inject_failure.sh
+Run: [inject_failure.sh](../scripts/chaos/inject_failure.sh)
 
 ## Investigation and Recovery
 
-See: runbooks/recover_s3_access.md
+See: [s3-content-unavailable.md](../runbook/s3-content-unavailable.md)
 
 ## Teardown
 
