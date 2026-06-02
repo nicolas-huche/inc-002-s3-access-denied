@@ -11,13 +11,13 @@ if [[ -z "${ROLE_NAME}" ]]; then
     exit 1
 fi
 
-log_info "Inspecting IAM Policy attachment"
+log_info "Inspecting IAM Policy attachments"
 
 POLICIES=$(
     aws iam list-attached-role-policies \
         --role-name "${ROLE_NAME}" \
-        --query 'AttachedPolicies[].PolicyName' \
-        --output text
+        --query 'AttachedPolicies[*].[PolicyName,PolicyArn]' \
+        --output table
 )
 
 if [[ -z "${POLICIES}" || "${POLICIES}" == "None" ]]; then
@@ -25,6 +25,4 @@ if [[ -z "${POLICIES}" || "${POLICIES}" == "None" ]]; then
     exit 1
 fi
 
-while IFS= read -r POLICY; do
-    [[ -n "${POLICY}" ]] && log_info "IAM Policy attached: ${POLICY}"
-done < <(printf '%s\n' "${POLICIES}" | tr '\t' '\n')
+echo "${POLICIES}"
