@@ -12,11 +12,10 @@ Skipping instructions is only permitted if one of the hypotheses before the last
 
 ## Prerequisites
 
-- Web browser
-- AWS CLI v2 configured
-- Terminal with SSH
-- IAM permissions
-- Access to diagnostic scripts
+- Access to the AWS Management Console
+- Permission to start AWS Systems Manager Session Manager sessions
+- Permission to inspect EC2, IAM and S3 resources
+- Access to the diagnostic scripts referenced by this runbook
 
 ## Decision Tree
 
@@ -34,7 +33,7 @@ Unable to load content
 
 ### Investigation
 
-Inspect the application configuration.
+Inspect the application configuration in a Session Manager 
 
 Verify whether the application is configured to retrieve an object from Amazon S3.
 
@@ -108,7 +107,7 @@ Correct the invalid bucket policy configuration by removing the rule denying acc
 
 ## Validation
 
-Access http://<public-ip>
+Access http://(instance-public-ip)
 
 Confirm that the application displays the S3 content
 
