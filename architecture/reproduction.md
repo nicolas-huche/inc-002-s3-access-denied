@@ -37,7 +37,7 @@ This document describes how to provision the environment, validate the healthy s
 
 ## Failure Injection
 
-Run: [inject_failure.sh](../scripts/chaos/inject_failure.sh)
+Run: [inject_failure.sh](../scripts/README.md)
 
 ## Investigation and Recovery
 
