@@ -1,0 +1,3 @@
+nicolas@neo inc-002-s3-access-denied % ./scripts/diagnose/inspect_object.sh inc-002-s3 content.txt 
+[INFO] 2026-06-02T14:53:55Z Inspecting object: s3://inc-002-s3/content.txt
+[INFO] 2026-06-02T14:53:55Z Object exists

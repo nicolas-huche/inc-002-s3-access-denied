@@ -1,0 +1,28 @@
+sh-5.2$ sudo ss -lntp
+State             Recv-Q            Send-Q                       Local Address:Port                       Peer Address:Port           Process
+LISTEN            0                 128                                0.0.0.0:80                              0.0.0.0:*               users:(("python3",pid=1416,fd=4))
+
+sh-5.2$ ps -fp 1416
+UID          PID    PPID  C STIME TTY          TIME CMD
+root        1416       1  0 14:06 ?        00:00:01 /usr/bin/python3 /opt/app.py
+
+sh-5.2$ sudo cat /opt/app.py
+from flask import Flask
+import boto3
+
+app = Flask(__name__)
+
+@app.route("/")
+def index():
+    try:
+        content = boto3.client("s3").get_object(
+            Bucket="inc-002-s3",
+            Key="content.txt"
+        )["Body"].read().decode()
+
+        return f"<h1>S3 Content:</h1><pre>{content}</pre>"
+
+    except Exception:
+        return "<h1>S3 Content:</h1><pre>Unable to load content.</pre>"
+
+app.run(host="0.0.0.0", port=80)

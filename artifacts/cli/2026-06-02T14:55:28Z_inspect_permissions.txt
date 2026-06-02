@@ -1,0 +1,17 @@
+nicolas@neo inc-002-s3-access-denied % ./scripts/diagnose/inspect_permissions.sh INC002S3AccessPolicy
+[INFO] 2026-06-02T14:55:28Z Inspecting IAM Policy: INC002S3AccessPolicy
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "ManageBucketObjects",
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "s3:DeleteObject"
+            ],
+            "Resource": "arn:aws:s3:::inc-002-s3"
+        }
+    ]
+}

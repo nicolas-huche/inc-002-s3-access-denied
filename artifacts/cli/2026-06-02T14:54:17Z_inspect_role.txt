@@ -1,0 +1,3 @@
+nicolas@neo inc-002-s3-access-denied % ./scripts/diagnose/inspect_role.sh 
+[INFO] 2026-06-02T14:54:17Z Inspecting IAM Role attachment
+[INFO] 2026-06-02T14:54:17Z IAM Role attached: INC002S3AccessRole

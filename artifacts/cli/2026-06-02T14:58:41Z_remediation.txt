@@ -1,0 +1,17 @@
+nicolas@neo inc-002-s3-access-denied % touch correct-policy.json
+
+nicolas@neo inc-002-s3-access-denied % nano correct-policy.json
+
+nicolas@neo inc-002-s3-access-denied % aws iam create-policy-version \
+  --policy-arn arn:aws:iam::026777907999:policy/INC002S3AccessPolicy   \         
+  --policy-document file://correct-policy.json \
+  --set-as-default
+{
+    "PolicyVersion": {
+        "VersionId": "v3",
+        "IsDefaultVersion": true,
+        "CreateDate": "2026-06-02T14:58:41+00:00"
+    }
+}
+
+nicolas@neo inc-002-s3-access-denied % rm correct-policy.json

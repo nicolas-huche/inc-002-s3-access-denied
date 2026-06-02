@@ -1,0 +1,8 @@
+nicolas@neo inc-002-s3-access-denied % ./scripts/diagnose/inspect_policy.sh INC002S3AccessRole
+[INFO] 2026-06-02T14:54:53Z Inspecting IAM Policy attachments
+------------------------------------------------------------------------------------------------------------------
+|                                            ListAttachedRolePolicies                                            |
++-------------------------------------------+--------------------------------------------------------------------+
+|  INC002S3AccessPolicy                     |  arn:aws:iam::026777907999:policy/INC002S3AccessPolicy             |
+|  AmazonSSMManagedEC2InstanceDefaultPolicy |  arn:aws:iam::aws:policy/AmazonSSMManagedEC2InstanceDefaultPolicy  |
++-------------------------------------------+--------------------------------------------------------------------+
