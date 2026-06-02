@@ -107,7 +107,7 @@ Correct the invalid bucket policy configuration by removing the rule denying acc
 
 ## Validation
 
-Access http://(instance-public-ip)
+Access http://PUBLIC_IP
 
 Confirm that the application displays the S3 content
 
@@ -134,5 +134,5 @@ Escalate if:
 - [inspect_object.sh](../scripts/diagnose/inspect_object.sh)
 - [inspect_role.sh](../scripts/diagnose/inspect_role.sh)
 - [inspect_policy.sh](../scripts/diagnose/inspect_policy.sh)
-- [inspect_pormissions.sh](../scripts/diagnose/inspect_permissions.sh)
+- [inspect_permissions.sh](../scripts/diagnose/inspect_permissions.sh)
 - [inspect_bucket_policy.sh](../scripts/diagnose/inspect_bucket_policy.sh)
