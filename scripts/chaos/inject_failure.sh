@@ -4,27 +4,24 @@ set -euo pipefail
 
 source "$(dirname "$0")/../lib/common.sh"
 
-INSTANCE_ID=$(
-    aws ec2 describe-instances \
-        --filters "Name=instance-state-name,Values=running" \
-        --query "Reservations[*].Instances[*].InstanceId" \
-        --output text
-)
+POLICY_NAME="${1:-}"
 
-ROLE_NAME=$(
-    aws ec2 describe-instances \
-        --instance-ids "${INSTANCE_ID}" \
-        --query "Reservations[*].Instances[*].IamInstanceProfile.Arn" \
-        --output text \
-    | awk -F'/' '{print $NF}'
-)
+if [[ -z "${POLICY_NAME}" ]]; then
+    log_error "Usage: $0 <policy-name>"
+    exit 1
+fi
 
 POLICY_ARN=$(
-    aws iam list-attached-role-policies \
-        --role-name "${ROLE_NAME}" \
-        --query "AttachedPolicies[*].PolicyArn" \
+    aws iam list-policies \
+        --scope Local \
+        --query "Policies[?PolicyName=='${POLICY_NAME}'].Arn" \
         --output text
 )
+
+if [[ -z "${POLICY_ARN}" || "${POLICY_ARN}" == "None" ]]; then
+    log_error "IAM Policy not found: ${POLICY_NAME}"
+    exit 1
+fi
 
 log_warn "Replacing IAM policy document with failure policy"
 

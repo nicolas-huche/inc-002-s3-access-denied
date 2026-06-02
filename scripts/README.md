@@ -58,7 +58,7 @@ Inspect Bucket Policy:
 Inject the simulated policy failure:
 
 ```bash
-./scripts/chaos/inject_failure.sh
+./scripts/chaos/inject_failure.sh POLICY_NAME
 ```
 
 This adds more permissions, but breaks ARN.
