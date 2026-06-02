@@ -37,4 +37,4 @@ Artifacts generated during the INC-002 S3 Access Denied simulation.
 
 | Timestamp (UTC) | Artifact | Description |
 |---|---|---|
-| 2026-06-02T14:58:56Z | [cloudtrail_policy.json](./cli/2026-06-02T14:58:56Z_cloudtrail_policy.json) | CloudTrail CreatePolicyVersion event for INC002S3AccessPolicy with the corrected S3 object resource |
+| 2026-06-02T14:58:56Z | [cloudtrail_policy.json](./cli/2026-06-02T14:58:56Z_cloudtrail_policy.json) | CloudTrail CreatePolicyVersion event showing the policy update that introduced an invalid S3 object ARN, unintentionally removing effective s3:GetObject access and causing the incident. |

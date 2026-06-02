@@ -1,11 +1,11 @@
 {
   "Events": [
     {
-      "EventId": "e9b25ace-7200-4c49-ac88-dba85d8088e5",
+      "EventId": "9fe6b82d-8494-418b-a86d-a31ee9df728e",
       "EventName": "CreatePolicyVersion",
       "ReadOnly": "false",
-      "AccessKeyId": "AKIxxxxxxxxxxxxxxxxx",
-      "EventTime": "2026-06-02T14:45:14-03:00",
+      "AccessKeyId": "ASIxxxxxxxxxxxxxxxxx",
+      "EventTime": "2026-06-02T14:58:56-03:00",
       "EventSource": "iam.amazonaws.com",
       "Username": "admin",
       "Resources": [
@@ -20,42 +20,49 @@
           "type": "IAMUser",
           "principalId": "AIDxxxxxxxxxxxxxxxxxx",
           "arn": "arn:aws:iam::026777907999:user/admin",
-          "accountId": "026777907999",
-          "accessKeyId": "AKIxxxxxxxxxxxxxxxxx",
-          "userName": "admin"
+          "accountId": "026xxxxxxxxx",
+          "accessKeyId": "ASIxxxxxxxxxxxxxxxxx",
+          "userName": "admin",
+          "sessionContext": {
+            "attributes": {
+              "creationDate": "2026-06-02T14:05:30Z",
+              "mfaAuthenticated": "false"
+            }
+          }
         },
-        "eventTime": "2026-06-02T14:45:14Z",
+        "eventTime": "2026-06-02T14:58:56Z",
         "eventSource": "iam.amazonaws.com",
         "eventName": "CreatePolicyVersion",
         "awsRegion": "us-east-1",
         "sourceIPAddress": "186xxxxxxxxxxx",
-        "userAgent": "aws-cli/2.34.45 md/awscrt#0.32.2 ua/2.1 os/macos#25.5.0 md/arch#arm64 lang/python#3.14.4 md/pyimpl#CPython m/b,Z,E,n cfg/retry-mode#standard md/installer#source md/prompt#off md/command#iam.create-policy-version",
+        "userAgent": "Mozxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
         "requestParameters": {
           "policyArn": "arn:aws:iam::026777907999:policy/INC002S3AccessPolicy",
-          "policyDocument": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Sid\": \"ManageBucketObjects\",\n      \"Effect\": \"Allow\",\n      \"Action\": [\n        \"s3:GetObject\",\n        \"s3:PutObject\",\n        \"s3:DeleteObject\"\n      ],\n      \"Resource\": \"arn:aws:s3:::inc-002-s3/content.txt\"\n    }\n  ]\n}\n",
+          "policyDocument": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Sid\": \"ManageBucketObjects\",\n      \"Effect\": \"Allow\",\n      \"Action\": [\n        \"s3:GetObject\",\n        \"s3:PutObject\",\n        \"s3:DeleteObject\"\n      ],\n      \"Resource\": \"arn:aws:s3:::inc-002-s3\"\n    }\n  ]\n}",
           "setAsDefault": true
         },
         "responseElements": {
           "policyVersion": {
-            "versionId": "v6",
+            "versionId": "v2",
             "isDefaultVersion": true,
-            "createDate": "Jun 2, 2026, 4:45:14 PM"
+            "createDate": "Jun 2, 2026, 4:58:56 PM"
           }
         },
-        "requestID": "985447ca-6882-49f7-b9d6-b49d88991ac8",
-        "eventID": "e9b25ace-7200-4c49-ac88-dba85d8088e5",
+        "requestID": "4c9a75dc-6940-40fe-b8f0-067336b98e55",
+        "eventID": "9fe6b82d-8494-418b-a86d-a31ee9df728e",
         "readOnly": false,
         "eventType": "AwsApiCall",
         "managementEvent": true,
-        "recipientAccountId": "026777907999",
+        "recipientAccountId": "026xxxxxxxxx",
         "eventCategory": "Management",
         "tlsDetails": {
           "tlsVersion": "TLSv1.3",
           "cipherSuite": "TLS_AES_128_GCM_SHA256",
           "clientProvidedHostHeader": "iam.amazonaws.com"
-        }
+        },
+        "sessionCredentialFromConsole": "true"
       }
     }
   ],
-  "NextToken": "tlSxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  "NextToken": "9ukxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 }
