@@ -6,7 +6,7 @@ This document describes how to provision the environment, validate the healthy s
 
 - AWS account
 - AWS CLI configured
-- SSH client
+- AWS Console
 
 ## Environment Provisioning
 
@@ -19,7 +19,8 @@ This document describes how to provision the environment, validate the healthy s
 
 3. Create an IAM policy using [healthy-policy.sh](./policies/healthy-policy.json)
 4. Create the IAM role for EC2.
-5. Attach the policy to the role.
+5. Attach the created policy to the role.
+6. Attach ```AmazonSSMManagedEC2InstanceDefaultPolicy``` policy to the role.
 
 ### EC2 Instance Setup
 
